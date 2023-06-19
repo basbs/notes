@@ -2,6 +2,7 @@
 
 - [Docker cheat-sheet](#docker-cheat-sheet)
   - [Docker Tips](#docker-tips)
+    - [Test if docker daemon is running using docker API.](#test-if-docker-daemon-is-running-using-docker-api)
     - [Filter and format the output of `docker images`](#filter-and-format-the-output-of-docker-images)
     - [View the CPU and memory usage of all the running container](#view-the-cpu-and-memory-usage-of-all-the-running-container)
     - [Access host machine's service from docker containers](#access-host-machines-service-from-docker-containers)
@@ -21,13 +22,26 @@
 
 ## Docker Tips
 
+### Test if docker daemon is running using docker API.
+```
+if curl -s --unix-socket /var/run/docker.sock http/_ping 2>&1 >/dev/null
+then
+  echo "Running"
+else
+  echo "Not running"
+fi
+
+```
+Ref: [Docker API](https://docs.docker.com/engine/api/v1.43/#tag/System/operation/SystemPing)
+
 
 ### Filter and format the output of `docker images`
 ```
 docker images --filter reference='imagename*' --format '{{.Repository}}:{{.Tag}}'
 ```
 - More details on filter and format can be found [here](https://docs.docker.com/engine/reference/commandline/images/#filtering).
-- Most 
+
+
 
 
 ### View the CPU and memory usage of all the running container
