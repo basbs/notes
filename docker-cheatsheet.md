@@ -18,6 +18,7 @@
     - [What is it?](#what-is-it)
     - [Features](#features)
     - [Re-deploy the service when compose file is modified.](#re-deploy-the-service-when-compose-file-is-modified)
+    - [When service failed to start.](#when-service-failed-to-start)
 
 
 ## Docker Tips
@@ -162,3 +163,7 @@ services:
 - Can also setup cluster-wide overlay networks.
 
 ### Re-deploy the service when compose file is modified.
+
+### When service failed to start. 
+- Inspect the service stack `docker service ps <serviceId>`
+- To remove the logs truncation `docker service ps --no-trunc <stackId>`
