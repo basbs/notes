@@ -167,3 +167,7 @@ services:
 ### When service failed to start. 
 - Inspect the service stack `docker service ps <serviceId>`
 - To remove the logs truncation `docker service ps --no-trunc <stackId>`
+
+### Auto update the docker image
+- https://github.com/containrrr/watchtower
+- https://containrrr.dev/watchtower/running-multiple-instances/
